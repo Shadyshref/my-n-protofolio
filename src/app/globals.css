@@ -43,6 +43,7 @@
 
 html {
   scroll-behavior: smooth;
+  color-scheme: dark;
 }
 
 body {
@@ -54,10 +55,19 @@ body {
     Helvetica,
     sans-serif;
   background-image:
-    radial-gradient(circle at top, rgba(76, 183, 245, 0.2), transparent 32%),
-    radial-gradient(circle at 85% 20%, rgba(19, 96, 145, 0.28), transparent 22%),
+    radial-gradient(
+      72rem 34rem at 50% -8%,
+      rgba(76, 183, 245, 0.18),
+      transparent 58%
+    ),
+    radial-gradient(
+      34rem 22rem at 90% 16%,
+      rgba(22, 88, 141, 0.18),
+      transparent 60%
+    ),
     linear-gradient(180deg, #081221 0%, #050b15 100%);
   min-height: 100vh;
+  overflow-x: clip;
 }
 
 body::before,
@@ -71,19 +81,19 @@ body::after {
 }
 
 body::before {
-  top: 9rem;
-  left: -6rem;
-  width: 16rem;
-  height: 16rem;
-  background: rgba(76, 183, 245, 0.12);
+  top: 8rem;
+  left: -5rem;
+  width: 18rem;
+  height: 18rem;
+  background: rgba(76, 183, 245, 0.1);
 }
 
 body::after {
-  right: 4rem;
-  bottom: 12rem;
-  width: 18rem;
-  height: 18rem;
-  background: rgba(8, 51, 89, 0.25);
+  right: 2rem;
+  bottom: 10rem;
+  width: 20rem;
+  height: 20rem;
+  background: rgba(8, 51, 89, 0.2);
 }
 
 ::selection {
@@ -122,4 +132,71 @@ body::after {
     linear-gradient(rgba(140, 172, 214, 0.08) 1px, transparent 1px),
     linear-gradient(90deg, rgba(140, 172, 214, 0.08) 1px, transparent 1px);
   background-size: 3.25rem 3.25rem;
+}
+
+@media (max-width: 1023px) {
+  body {
+    background-image:
+      radial-gradient(
+        54rem 28rem at 50% -4%,
+        rgba(76, 183, 245, 0.16),
+        transparent 60%
+      ),
+      radial-gradient(
+        28rem 18rem at 92% 18%,
+        rgba(22, 88, 141, 0.16),
+        transparent 62%
+      ),
+      linear-gradient(180deg, #081221 0%, #050b15 100%);
+  }
+
+  body::before {
+    top: 7rem;
+    left: -4rem;
+    width: 15rem;
+    height: 15rem;
+  }
+
+  body::after {
+    right: -1rem;
+    bottom: 12rem;
+    width: 16rem;
+    height: 16rem;
+  }
+}
+
+@media (max-width: 767px) {
+  body {
+    background-image:
+      radial-gradient(
+        34rem 18rem at 50% -2%,
+        rgba(76, 183, 245, 0.15),
+        transparent 62%
+      ),
+      radial-gradient(
+        18rem 14rem at 100% 12%,
+        rgba(22, 88, 141, 0.14),
+        transparent 68%
+      ),
+      linear-gradient(180deg, #081221 0%, #050b15 100%);
+  }
+
+  body::before {
+    top: 5rem;
+    left: 50%;
+    width: 12rem;
+    height: 12rem;
+    transform: translateX(-50%);
+  }
+
+  body::after {
+    right: -4rem;
+    bottom: 18rem;
+    width: 12rem;
+    height: 12rem;
+  }
+
+  .grid-glow {
+    background-size: 2.2rem 2.2rem;
+  }
 }

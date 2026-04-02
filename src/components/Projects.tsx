@@ -4,7 +4,7 @@ const Projects = () => {
       id: 1,
       name: "Stream Chat",
       link: "https://github.com/Shadyshref/stream-chat",
-      accent: "from-[#0d2137] via-[#153f62] to-[#4CB7F5]",
+      accent: "from-[#0d2137] via-[#163955] to-[#4CB7F5]",
       eyebrow: "Realtime Platform",
       description:
         "A live messaging experience built for fast conversations, immediate presence feedback, and responsive interactions.",
@@ -16,7 +16,7 @@ const Projects = () => {
       id: 2,
       name: "Project Management",
       link: "https://github.com/Shadyshref/project-managment",
-      accent: "from-[#10172f] via-[#203068] to-[#4CB7F5]",
+      accent: "from-[#10172f] via-[#223a72] to-[#4CB7F5]",
       eyebrow: "Workflow System",
       description:
         "A structured workspace for planning, assignment, and delivery visibility across complex project flows.",
@@ -34,7 +34,7 @@ const Projects = () => {
       id: 3,
       name: "E-Commerce",
       link: "https://github.com/Shadyshref/Full-stack-e-commerce-web",
-      accent: "from-[#101928] via-[#264360] to-[#4CB7F5]",
+      accent: "from-[#101928] via-[#26445f] to-[#4CB7F5]",
       eyebrow: "Commerce Experience",
       description:
         "A polished storefront focused on reliable purchases, secure flows, and a smoother path from browsing to checkout.",
@@ -71,20 +71,20 @@ const Projects = () => {
             className="glass-panel overflow-hidden rounded-[28px] p-0 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_30px_90px_rgba(76,183,245,0.12)]"
           >
             <div
-              className={`relative min-h-64 overflow-hidden bg-gradient-to-br ${pro.accent} p-6`}
+              className={`relative aspect-[5/4] overflow-hidden bg-gradient-to-b p-5 sm:aspect-[16/11] sm:bg-gradient-to-br sm:p-6 ${pro.accent}`}
             >
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.22),transparent_35%),linear-gradient(180deg,rgba(7,17,31,0.18),rgba(7,17,31,0.52))]" />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.16),transparent_46%),linear-gradient(180deg,rgba(7,17,31,0.12),rgba(7,17,31,0.58))] sm:bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.22),transparent_35%),linear-gradient(180deg,rgba(7,17,31,0.18),rgba(7,17,31,0.52))]" />
               <div className="relative flex h-full flex-col justify-between">
                 <div>
                   <p className="text-xs uppercase tracking-[0.3em] text-white/70">
                     {pro.eyebrow}
                   </p>
-                  <h3 className="mt-4 text-3xl font-bold text-white">
+                  <h3 className="mt-4 text-[clamp(1.8rem,7vw,2rem)] font-bold text-white">
                     {pro.name}
                   </h3>
                 </div>
 
-                <div className="rounded-[24px] border border-white/10 bg-[#07111f]/55 p-4 backdrop-blur-md">
+                <div className="rounded-[24px] border border-white/10 bg-[#07111f]/60 p-4 backdrop-blur-md">
                   <div className="mb-4 flex items-center gap-2">
                     <span className="h-2.5 w-2.5 rounded-full bg-[#4CB7F5]" />
                     <span className="h-2.5 w-2.5 rounded-full bg-white/50" />

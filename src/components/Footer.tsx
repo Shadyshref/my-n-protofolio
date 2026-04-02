@@ -32,12 +32,7 @@ const Footer = () => {
               </p>
             </div>
 
-            <a
-              href="mailto:shadyshref30@gmail.com"
-              className="inline-flex items-center justify-center rounded-md bg-[#4CB7F5] px-6 py-4 text-sm font-semibold text-[#04111d] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#78ccff]"
-            >
-              Get in Touch
-            </a>
+           
           </div>
 
           <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">

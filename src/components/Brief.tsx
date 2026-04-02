@@ -113,12 +113,12 @@ export default function Brief() {
         </div>
 
         <div className="relative">
-          <div className="grid-glow absolute inset-6 rounded-[32px] opacity-35" />
-          <div className="glass-panel relative overflow-hidden rounded-[32px] p-6 md:p-8">
-            <div className="absolute -right-10 top-8 h-36 w-36 rounded-full bg-[#4CB7F5]/20 blur-3xl" />
-            <div className="absolute bottom-6 left-6 h-28 w-28 rounded-full bg-[#123a61]/55 blur-3xl" />
+          <div className="grid-glow absolute inset-3 rounded-[28px] opacity-25 sm:inset-5 md:inset-6 md:rounded-[32px] md:opacity-35" />
+          <div className="glass-panel relative overflow-hidden rounded-[32px] bg-[radial-gradient(circle_at_top,rgba(76,183,245,0.12),transparent_42%)] p-5 sm:p-6 md:bg-[radial-gradient(circle_at_22%_12%,rgba(76,183,245,0.14),transparent_36%)] md:p-8">
+            <div className="absolute -right-6 top-6 h-24 w-24 rounded-full bg-[#4CB7F5]/16 blur-3xl sm:-right-8 sm:top-7 sm:h-28 sm:w-28 md:-right-10 md:top-8 md:h-36 md:w-36 md:bg-[#4CB7F5]/20" />
+            <div className="absolute bottom-4 left-4 h-20 w-20 rounded-full bg-[#123a61]/40 blur-3xl sm:bottom-5 sm:left-5 sm:h-24 sm:w-24 md:bottom-6 md:left-6 md:h-28 md:w-28 md:bg-[#123a61]/55" />
 
-            <div className="mb-6 flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
+            <div className="mb-6 flex flex-col gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 sm:flex-row sm:items-center sm:justify-between">
               <div>
                 <p className="text-xs uppercase tracking-[0.28em] text-[#4CB7F5]">
                   Current Focus
@@ -137,7 +137,8 @@ export default function Brief() {
                   width={460}
                   height={560}
                   src="/images/photo.jpg"
-                  className="h-[26rem] w-full rounded-[24px] object-cover object-top shadow-[0_20px_50px_rgba(0,0,0,0.35)]"
+                  sizes="(min-width: 1024px) 34rem, (min-width: 640px) 28rem, 100vw"
+                  className="h-[20rem] w-full rounded-[24px] object-cover object-top shadow-[0_20px_50px_rgba(0,0,0,0.35)] sm:h-[23rem] md:h-[26rem]"
                   alt="Shady Sherif portrait"
                   priority
                 />
