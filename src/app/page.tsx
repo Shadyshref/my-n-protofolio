@@ -9,9 +9,9 @@ import TechnicalSkills from "@/components/TecnicalSkill";
 
 export default function Home() {
   return (
-    <>
+    <div className="site-shell">
       <Navbar />
-      <div className="flex flex-col gap-15 space-y-25">
+      <main className="container flex flex-col gap-24 pb-16 pt-28 md:gap-32 md:pt-32">
         <MotionWrapper>
           <Brief />
         </MotionWrapper>
@@ -27,10 +27,10 @@ export default function Home() {
         <MotionWrapper>
           <TechnicalSkills />
         </MotionWrapper>
-      </div>
+      </main>
       <MotionWrapper>
         <Footer />
       </MotionWrapper>
-    </>
+    </div>
   );
 }

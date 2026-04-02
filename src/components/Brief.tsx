@@ -4,55 +4,79 @@ import Image from "next/image";
 import Link from "next/link";
 import { BsGithub } from "react-icons/bs";
 import {
-  FaFacebookF,
-  FaWhatsapp,
-  FaInstagram,
+  FaArrowRight,
+  FaEnvelope,
   FaLinkedinIn,
+  FaWhatsapp,
 } from "react-icons/fa";
 
 export default function Brief() {
+  const stack = [
+    "React",
+    "Next.js",
+    "TypeScript",
+    "Node.js",
+    "PostgreSQL",
+    "Cloud Deployments",
+  ];
+
+  const metrics = [
+    { value: "2+", label: "Years building production-ready apps" },
+    { value: "5+", label: "Live deployments across modern stacks" },
+    { value: "Full", label: "Stack ownership from UI to API" },
+  ];
+
   return (
-    <section id="brief" className="w-full mt-30 scroll-mt-30">
-      <div className="container flex flex-col gap-12 items-center text-center lg:flex-row lg:justify-between lg:items-center lg:text-left">
-        <div className="flex flex-col gap-4 items-center lg:items-start">
-          <h1 className="text-2xl md:text-3xl font-semibold">
-            {" "}
-            Hello, It&apos;s Me
-          </h1>
-          <h2 className="text-2xl md:text-3xl font-semibold">
-            <strong>Shady Sherif</strong>
-            <br />
-            And I&apos;am a{" "}
-            <strong className="text-[#4CB7F5]">FullStack Web Developer</strong>
-          </h2>
-          <div className="mt-2 text-gray-300 font-semibold text-3xl md:text-3xl leading-tight max-w-[60rem]">
-            <p>
-              I am a Full Stack Web Developer with over two years of experience.
-            </p>
-            <p>
-              I have built modern, responsive front-end applications and secure,
-              scalable back-end systems.
-            </p>
-            <p>
-              I focus on website security, performance optimization, and
-              delivering seamless user experiences.
+    <section id="brief" className="scroll-mt-32">
+      <div className="grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
+        <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-5">
+            <span className="section-kicker text-sm font-medium">
+              Full Stack Developer
+            </span>
+            <h1 className="section-heading max-w-4xl text-5xl font-bold leading-[1.05] text-white md:text-6xl xl:text-7xl">
+              Building scalable digital experiences with precision.
+            </h1>
+            <p className="max-w-3xl text-lg leading-8 text-[#b3c5de] md:text-xl">
+              I design and ship modern products that balance clean interfaces,
+              robust APIs, and dependable deployment workflows. The goal is
+              always the same: make complexity feel effortless for the people
+              using it.
             </p>
           </div>
-          <div className="flex justify-center lg:justify-start gap-4 mt-6 flex-wrap">
-            <SocialIcon
-              href="https://www.facebook.com/share/1CrXiuGv2r/"
-              icon={<FaFacebookF />}
-              type="facebook"
-            />
+
+          <div className="flex flex-wrap gap-3">
+            {stack.map((item) => (
+              <span
+                key={item}
+                className="rounded-md border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-[#dce9fb]"
+              >
+                {item}
+              </span>
+            ))}
+          </div>
+
+          <div className="flex flex-col gap-3 sm:flex-row">
+            <Link
+              href="#projects"
+              className="inline-flex items-center justify-center gap-3 rounded-md bg-[#4CB7F5] px-7 py-4 text-sm font-semibold text-[#04111d] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#78ccff]"
+            >
+              View Work
+              <FaArrowRight className="text-sm" />
+            </Link>
+            <Link
+              href="#contact"
+              className="inline-flex items-center justify-center rounded-md border border-[#4CB7F5]/50 bg-transparent px-7 py-4 text-sm font-semibold text-[#dff1ff] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#78ccff] hover:bg-[#4CB7F5]/10"
+            >
+              Contact Me
+            </Link>
+          </div>
+
+          <div className="flex flex-wrap gap-4">
             <SocialIcon
               href="https://wa.me/+201140205447"
               icon={<FaWhatsapp />}
               type="whatsapp"
-            />
-            <SocialIcon
-              href="https://www.instagram.com/shadyshref.30"
-              icon={<FaInstagram />}
-              type="instagram"
             />
             <SocialIcon
               href="https://www.linkedin.com/in/shady-elbadry-1b2344337"
@@ -64,31 +88,83 @@ export default function Brief() {
               icon={<BsGithub />}
               type="github"
             />
+            <SocialIcon
+              href="mailto:shadyshref30@gmail.com"
+              icon={<FaEnvelope />}
+              type="email"
+            />
           </div>
-          <button
-            onClick={() => {
-              const Aboutme = document.getElementById("Aboutme");
-              if (Aboutme) {
-                Aboutme.scrollIntoView({ behavior: "smooth" });
-              }
-            }}
-            className="mt-6 text-2xl bg-blue-400 w-[250px] rounded-2xl whitespace-nowrap px-6 py-4 font-semibold cursor-pointer text-blue-950 shadow-lg hover:bg-blue-300 hover:text-white transition-all duration-300 transform hover:scale-105"
-          >
-            {" "}
-            More About me
-          </button>
+
+          <div className="grid gap-4 md:grid-cols-3">
+            {metrics.map((metric) => (
+              <div
+                key={metric.label}
+                className="glass-panel rounded-[20px] p-5"
+              >
+                <div className="text-3xl font-bold text-white">
+                  {metric.value}
+                </div>
+                <p className="mt-2 text-sm leading-6 text-[#a8bfdc]">
+                  {metric.label}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="relative flex items-center justify-center w-[280px] h-[280px] sm:w-[340px] sm:h-[340px] md:w-[390px] md:h-[390px] lg:w-[460px] lg:h-[460px]">
-          <div className="absolute inset-7 sm:inset-8 rounded-full bg-[#4CB7F5]/40 blur-3xl"></div>
-          <div className="absolute inset-4 sm:inset-5 rounded-full border border-white/15 shadow-[0_0_60px_rgba(76,183,245,0.3)]"></div>
-          <Image
-            width={400}
-            height={400}
-            src="/images/photo.jpg"
-            className="relative z-10 w-[230px] h-[230px] sm:w-[285px] sm:h-[285px] md:w-[330px] md:h-[330px] lg:w-[370px] lg:h-[370px] rounded-full object-cover border-4 border-white/90 shadow-[0_18px_45px_rgba(0,0,0,0.28)]"
-            alt="profile"
-            priority
-          />
+
+        <div className="relative">
+          <div className="grid-glow absolute inset-6 rounded-[32px] opacity-35" />
+          <div className="glass-panel relative overflow-hidden rounded-[32px] p-6 md:p-8">
+            <div className="absolute -right-10 top-8 h-36 w-36 rounded-full bg-[#4CB7F5]/20 blur-3xl" />
+            <div className="absolute bottom-6 left-6 h-28 w-28 rounded-full bg-[#123a61]/55 blur-3xl" />
+
+            <div className="mb-6 flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
+              <div>
+                <p className="text-xs uppercase tracking-[0.28em] text-[#4CB7F5]">
+                  Current Focus
+                </p>
+                <p className="mt-2 text-sm text-[#dfeeff]">
+                  Secure platforms, smooth UX, and production readiness.
+                </p>
+              </div>
+              <div className="h-3 w-3 rounded-full bg-[#4CB7F5] shadow-[0_0_18px_rgba(76,183,245,0.8)]" />
+            </div>
+
+            <div className="relative mx-auto max-w-md">
+              <div className="absolute inset-6 rounded-full bg-[#4CB7F5]/25 blur-3xl" />
+              <div className="relative overflow-hidden rounded-[28px] border border-white/10 bg-white/[0.04] p-4">
+                <Image
+                  width={460}
+                  height={560}
+                  src="/images/photo.jpg"
+                  className="h-[26rem] w-full rounded-[24px] object-cover object-top shadow-[0_20px_50px_rgba(0,0,0,0.35)]"
+                  alt="Shady Sherif portrait"
+                  priority
+                />
+              </div>
+            </div>
+
+            <div className="mt-6 grid gap-4 md:grid-cols-2">
+              <div className="rounded-2xl border border-white/10 bg-[#091524]/80 p-4">
+                <p className="text-xs uppercase tracking-[0.28em] text-[#4CB7F5]">
+                  Expertise
+                </p>
+                <p className="mt-3 text-sm leading-6 text-[#dbe9ff]">
+                  Frontend systems, backend architecture, database design, and
+                  cloud deployment pipelines.
+                </p>
+              </div>
+              <div className="rounded-2xl border border-white/10 bg-[#091524]/80 p-4">
+                <p className="text-xs uppercase tracking-[0.28em] text-[#4CB7F5]">
+                  Approach
+                </p>
+                <p className="mt-3 text-sm leading-6 text-[#dbe9ff]">
+                  Performance-aware, security-first, and focused on delivering
+                  polished products people enjoy using.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -106,31 +182,15 @@ export function SocialIcon({
   type: string;
   className?: string;
 }) {
-  const getStyleClass = () => {
-    const baseStyle =
-      "rounded-full p-3 text-2xl transition-all hover:scale-110 transition-duration-300 opacity-80 hover:opacity-100";
-    switch (type) {
-      case "facebook":
-        return `${baseStyle} border-2 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white`;
-      case "whatsapp":
-        return `${baseStyle} border-2 border-green-500 text-green-500 hover:bg-green-500 hover:text-white`;
-      case "instagram":
-        return `${baseStyle} border-2 border-transparent bg-gradient-to-r from-purple-600 via-pink-600 to-red-500 text-white hover:opacity-100`;
-      case "linkedin":
-        return `${baseStyle} border-2 border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white`;
-      case "github":
-        return `${baseStyle} border-2 border-gray-600 text-gray-600 hover:bg-gray-600 hover:text-white`;
-      default:
-        return `${baseStyle} border-2 border-white text-white`;
-    }
-  };
+  const baseStyle =
+    "inline-flex h-12 w-12 items-center justify-center rounded-md border border-white/10 bg-white/5 text-lg text-[#dce9fb] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#4CB7F5]/70 hover:bg-[#4CB7F5]/10 hover:text-[#4CB7F5]";
 
   return (
     <Link
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className={className || getStyleClass()}
+      className={className || baseStyle}
       aria-label={type}
     >
       {icon}

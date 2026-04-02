@@ -1,29 +1,30 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: rgb(11, 11, 31);
+  --background: #07111f;
+  --foreground: #e8f1ff;
+  --muted: #97abc6;
+  --surface: rgba(11, 22, 39, 0.72);
+  --surface-strong: rgba(9, 18, 33, 0.92);
+  --border: rgba(149, 179, 214, 0.18);
+  --accent: #4cb7f5;
+  --accent-strong: #78ccff;
+  --shadow: 0 30px 80px rgba(2, 8, 20, 0.38);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-roboto);
-  --font-mono: var(--font-roboto);
+  --font-sans: var(--font-space-grotesk);
+  --font-mono: var(--font-space-grotesk);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: rgb(11, 11, 31);
-    --foreground: #ededed;
-  }
-}
 @utility container {
   margin-inline: auto;
-  padding-inline: 2rem;
-  max-width: 96rem;
+  padding-inline: clamp(1.25rem, 2vw, 2.5rem);
+  max-width: 90rem;
   font-family:
-    var(--font-roboto),
+    var(--font-space-grotesk),
     ui-sans-serif,
     system-ui,
     -apple-system,
@@ -40,8 +41,85 @@
     "Noto Color Emoji";
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family:
+    var(--font-space-grotesk),
+    Arial,
+    Helvetica,
+    sans-serif;
+  background-image:
+    radial-gradient(circle at top, rgba(76, 183, 245, 0.2), transparent 32%),
+    radial-gradient(circle at 85% 20%, rgba(19, 96, 145, 0.28), transparent 22%),
+    linear-gradient(180deg, #081221 0%, #050b15 100%);
+  min-height: 100vh;
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  inset: auto;
+  pointer-events: none;
+  z-index: -1;
+  filter: blur(80px);
+}
+
+body::before {
+  top: 9rem;
+  left: -6rem;
+  width: 16rem;
+  height: 16rem;
+  background: rgba(76, 183, 245, 0.12);
+}
+
+body::after {
+  right: 4rem;
+  bottom: 12rem;
+  width: 18rem;
+  height: 18rem;
+  background: rgba(8, 51, 89, 0.25);
+}
+
+::selection {
+  background: rgba(76, 183, 245, 0.32);
+  color: #f7fbff;
+}
+
+.site-shell {
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-panel {
+  border: 1px solid var(--border);
+  background: linear-gradient(
+    180deg,
+    rgba(18, 32, 54, 0.78) 0%,
+    rgba(9, 18, 33, 0.72) 100%
+  );
+  backdrop-filter: blur(18px);
+  box-shadow: var(--shadow);
+}
+
+.section-kicker {
+  color: var(--accent);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.section-heading {
+  text-wrap: balance;
+}
+
+.grid-glow {
+  background-image:
+    linear-gradient(rgba(140, 172, 214, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(140, 172, 214, 0.08) 1px, transparent 1px);
+  background-size: 3.25rem 3.25rem;
 }
